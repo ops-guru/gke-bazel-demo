@@ -47,7 +47,7 @@ CMD=(bazel
   --config remote
   --define "cluster=${CONTEXT}"
   --define "repo=${REPO}"
-  //:bazel_demo_k8s.apply)
+  //:bazel_demo_k8s.apply "${@}")
 
 # RBE can't run on mac yet
 if [[ "$OSTYPE" == "darwin"* ]]; then

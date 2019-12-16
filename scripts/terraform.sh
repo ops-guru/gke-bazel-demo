@@ -38,5 +38,5 @@ gcloud services enable compute.googleapis.com \
     cloudresourcemanager.googleapis.com
 
 # Initialize and run Terraform
-(cd "$ROOT/terraform"; terraform init -input=false)
-(cd "$ROOT/terraform"; terraform apply -input=false -auto-approve)
+(cd "$ROOT/terraform"; terraform init -input=false "${@}")
+(cd "$ROOT/terraform"; terraform apply -input=false -auto-approve "${@}")

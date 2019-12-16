@@ -47,8 +47,8 @@ RBE="${RBE:-false}"
 
 RBE_FLAGS=(
   "--config=remote"
-	"--remote_instance_name=projects/$PROJECT/instances/default_instance"
-	"--project_id=$PROJECT"
+  "--remote_instance_name=projects/$PROJECT/instances/default_instance"
+  "--project_id=$PROJECT"
 )
 
 if  [[ $RBE != false ]]; then
@@ -108,9 +108,9 @@ fi
 # RBE can't run on mac yet
 if [[ $RBE != false || "$OSTYPE" == "darwin"* ]]; then
 	# shellcheck source=/dev/null
-	source "$ROOT/scripts/planter.sh" "${CMD[*]}"
+	source "$ROOT/scripts/planter.sh" "${CMD[*]}" "${@}"
 else
-	"${CMD[@]}"
+	"${CMD[@]}" "${@}"
 fi
 
 #########

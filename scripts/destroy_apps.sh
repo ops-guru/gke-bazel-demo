@@ -24,7 +24,7 @@ CMD=(bazel run
   "--incompatible_disallow_dict_plus=false"
   --define "cluster=${CONTEXT}"
   --define "repo=${REPO}"
-  //:bazel_demo_k8s.delete)
+  //:bazel_demo_k8s.delete "${@}")
 
 "${CMD[@]}"
 
