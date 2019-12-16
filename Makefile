@@ -33,15 +33,15 @@ all: terraform create
 
 .PHONY: terraform
 terraform:
-	@source scripts/terraform.sh
+	@source scripts/terraform.sh ${ARGS}
 
 .PHONY: create
 create:
-	@source scripts/create.sh
+	@source scripts/create.sh ${ARGS}
 
 .PHONY: rbe-create
 rbe-create:
-	@source scripts/create-rbe.sh
+	@source scripts/create-rbe.sh ${ARGS}
 
 .PHONY: validate
 validate:
@@ -49,11 +49,11 @@ validate:
 
 .PHONY: teardown
 teardown:
-	@source scripts/teardown.sh
+	@source scripts/teardown.sh ${ARGS}
 
 .PHONY: destroy_apps
 destroy_apps:
-	@source scripts/destroy_apps.sh
+	@source scripts/destroy_apps.sh ${ARGS}
 
 .PHONY: build
 build:
